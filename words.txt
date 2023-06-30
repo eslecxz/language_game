@@ -1,0 +1,8 @@
+кот cat
+собака dog
+яблоко apple
+лимон lemon
+алмаз diamond
+королева queen
+жизнь life
+гав gav
