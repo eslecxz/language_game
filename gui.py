@@ -92,6 +92,10 @@ def cnt3():
     cnt_true['text'] = CntTrue
 
 
+def del_btn_12():
+    TextInput2.delete(0, END)
+    TextInput3.delete(0, END)
+
 
 
 
@@ -214,10 +218,10 @@ SomeLabel4.place(x=170, y=415, width=100, height=80)
 TextInput2 = Entry(frame_dobav, font=('Roboto', 50),  bg=pc, fg=blc)
 TextInput2.place(x=295, y=320)
 
-TextInput2 = Entry(frame_dobav, font=('Roboto', 50),  bg=pc, fg=blc)
-TextInput2.place(x=300, y=420)
+TextInput3 = Entry(frame_dobav, font=('Roboto', 50),  bg=pc, fg=blc)
+TextInput3.place(x=300, y=420)
 
-btn12 = Button(frame_dobav, text = 'готовенько!', font=('Roboto', 40), bg=fic, fg=fic_2, )
+btn12 = Button(frame_dobav, text = 'готовенько!', font=('Roboto', 40), bg=fic, fg=fic_2, command=del_btn_12)
 btn12.place(x=40, y=530, width=1000, height=140)
 
 root.mainloop()
