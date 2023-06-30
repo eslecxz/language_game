@@ -13,6 +13,10 @@ def delet_bnt3():
     frame_meny.pack_forget()
     frame_game.pack()
 
+def delet_btn10():
+    frame_meny.pack_forget()
+    frame_dobav.pack()
+
 def perehod_btn4():
     frame_game.pack_forget()
     frame_meny. pack()
@@ -26,6 +30,9 @@ def perehod_btn6():
     frame_ru_eng.pack_forget()
     frame_meny. pack()
 
+def perehod_btn11():
+    frame_dobav.pack_forget()
+    frame_meny. pack()
 
     
 
@@ -100,21 +107,25 @@ CntTrue = 0
 CntTrue1 = 0
 
 
-file = open('words.txt', 'r', encoding ='UTF-8')
+file = open('/Users/ana/Desktop/language_game/words.txt', 'r', encoding ='UTF-8')
 file_list = [line.strip() for line in file]
 for el in file_list:
     print(el.split())
-    slovo.append(el.split()[0])#ru
-    perevod.append(el.split()[1])#eng
+    slovo.append(el.split()[0])
+    perevod.append(el.split()[1])
  
  
 root = Tk()
 root.title('Приложение для изучения слов')
 root.geometry('1080x720')
-root. resizable(False, False)
+
+
+
+
+
 
 frame_meny = Frame(root,width=1080, height=720, background='red')
-
+frame_dobav = Frame(root,width=1080, height=720, background='brown')
 frame_game = Frame(root, width=1080, height=720, background='blue')
 frame_eng_ru = Frame(root, width=1080, height=720, background='purple')
 frame_ru_eng = Frame(root, width=1080, height=720, background='pink')
@@ -124,13 +135,13 @@ frame_ru_eng = Frame(root, width=1080, height=720, background='pink')
 frame_meny. pack()
 
 
-btn1 = Button(frame_meny, text = 'ru', font=('Roboto', 100), fg='black', command=delet_bnt1)
+btn1 = Button(frame_meny, text = 'вывод русских слов', font=('Roboto', 25), fg='black', command=delet_bnt1)
 btn1.place(x=20, y=60, width=300, height=600)
 
-btn2 = Button(frame_meny, text = 'eng', font=('Roboto', 100), fg='black', command=delet_bnt2)
+btn2 = Button(frame_meny, text = 'вывод английских слов', font=('Roboto', 25), fg='black', command=delet_bnt2)
 btn2.place(x=380, y=60, width=300, height=600)
 
-btn3 = Button(frame_meny, text = 'game', font=('Roboto', 100), fg='black', command=delet_bnt3)
+btn3 = Button(frame_meny, text = 'игра составь слово', font=('Roboto',25), fg='black', command=delet_bnt3)
 btn3.place(x=740, y=60, width=300, height=600)
 
 btn4 = Button(frame_game, text = 'назад', font=('Roboto', 10), fg='black', command=perehod_btn4)
@@ -185,8 +196,29 @@ otvetka1.place(x=40, y=400, width=1000, height=300)
 cnt_true1 = Label(frame_eng_ru, text='твой счет', font=('Roboto', 35), bg='#C2F0B3', fg=fic_2)
 cnt_true1.place(x=40, y=320, width=255, height=80)
 
+btn10 = Button(frame_meny, text = 'добавить свои слова', font=('Roboto', 25), fg='black', command=delet_btn10)
+btn10.place(x=20, y=10, width=1020, height=60)
 
+btn11 = Button(frame_dobav, text = 'назад', font=('Roboto', 10), fg='black', command=perehod_btn11)
+btn11.place(x=1040, y=0, width=40, height=40)
 
+SomeLabel2 = Label(frame_dobav, text='Введи в первую строку русское слово, а во вторую английское', font=('Roboto', 30),  bg=pc, fg=blc)
+SomeLabel2.place(x=40, y=40, width=1000, height=100)
+
+SomeLabel3 = Label(frame_dobav, text='1.', font=('Roboto', 100),  bg=pc, fg=blc)
+SomeLabel3.place(x=170, y=315, width=100, height=80)
+
+SomeLabel4 = Label(frame_dobav, text='2.', font=('Roboto', 100),  bg=pc, fg=blc)
+SomeLabel4.place(x=170, y=415, width=100, height=80)
+
+TextInput2 = Entry(frame_dobav, font=('Roboto', 50),  bg=pc, fg=blc)
+TextInput2.place(x=295, y=320)
+
+TextInput2 = Entry(frame_dobav, font=('Roboto', 50),  bg=pc, fg=blc)
+TextInput2.place(x=300, y=420)
+
+btn12 = Button(frame_dobav, text = 'готовенько!', font=('Roboto', 40), bg=fic, fg=fic_2, )
+btn12.place(x=40, y=530, width=1000, height=140)
 
 root.mainloop()
 
